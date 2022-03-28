@@ -1,0 +1,12 @@
+Based challenge:
+
+We get "UTnxCcvfAupihvrUwJVor4NyfArPk8Q6Enzqo1uPRAeBpGi4WJVskTRY"
+
+We identify it as base58 cipher.
+
+When decoded:
+}853s4b_d3sr3v3r_3d0c3D_n4c_u0Y{FTCB
+
+It's a matter of reversing the string:
+
+Flag: BCTF{Y0u_c4n_D3c0d3_r3v3rs3d_b4s358}

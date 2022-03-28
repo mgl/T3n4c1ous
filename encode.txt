@@ -1,0 +1,16 @@
+Encode challenge
+
+We get the following message:  4e3255334e5449784d6a45794e54566a4e7a49794e5463314e474d334f444d774e3249315a6a51334e6a497a4d4463794e6a59334e5451304e47553d
+
+After way too many hours, we find it's encoded in hex, then base64, then hex and finally 47 cesar cipher!!
+
+4e3255334e5449784d6a45794e54566a4e7a49794e5463314e474d334f444d774e3249315a6a51334e6a497a4d4463794e6a59334e5451304e47553d
+
+From hex: N2U3NTIxMjEyNTVjNzIyNTc1NGM3ODMwN2I1ZjQ3NjIzMDcyNjY3NTQ0NGU=
+
+From base64: 7e752121255c7225754c78307b5f476230726675444e
+
+From hex: ~u!!%\r%uLx0{_Gb0rfuDN
+
+From ROT47: BCTF{I_L0v3_C1ph3rs}
+

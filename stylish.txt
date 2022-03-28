@@ -1,0 +1,15 @@
+Stylish challenge:
+
+We get an URL with only one page.
+
+We access the style.css.
+
+line 27:
+
+h1, div, a {
+    /* BCTF{w3lc0me_t0_BC7F} */
+    color: white;
+    fonrt-size: 3rem;
+}
+
+Flag: BCTF{w3lc0me_t0_BC7F}
